@@ -1,4 +1,3 @@
-//this is an attempt to create a big integer class, like the one in java
 #ifndef MEASUREMENT_HPP
 #define MEASUREMENT_HPP
 
@@ -7,7 +6,6 @@
 #include <cmath>
 
 
-//test uncertainty class
 template <class T>
 class Measurement {
 	private:
@@ -169,8 +167,8 @@ Measurement<T> sqrt(Measurement<T> input){
 }
 
 //===============================================================================
-
 //print overload
+
 template <class T>
 ostream& operator<<(ostream& os, Measurement<T> ms){
 	os << ms.getNumber() << " ± " << ms.getUncert();
