@@ -6,8 +6,6 @@
 #include <string>
 #include <cmath>
 
-using namespace std;
-using namespace boost::multiprecision;
 
 //test uncertainty class
 template <class T>
@@ -77,6 +75,7 @@ class Measurement {
 };
 
 //=======================================================================================
+//function overloads
 
 template <class T>
 Measurement<T> pow(Measurement<T> input, Measurement<T> power){
