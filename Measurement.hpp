@@ -166,6 +166,37 @@ Measurement<T> sqrt(Measurement<T> input){
 	return Measurement<T>(sqrtX, input.getUncert() / (2 * sqrtX));
 }
 
+template <class T>
+Measurement<T> sinh(Measurement<T> input){
+	return (exp(input) - exp(Measurement<T>(-1) * input))/Measurement<T>(2);
+}
+
+template <class T>
+Measurement<T> cosh(Measurement<T> input){
+	return (exp(input) + exp(Measurement<T>(-1) * input))/Measurement<T>(2);
+}
+
+template <class T>
+Measurement<T> tanh(Measurement<T> input){
+	return sinh(input) / cosh(input);
+}
+
+template <class T>
+Measurement<T> asinh(Measurement<T> input){
+	return log(input + sqrt(input*input + Measurement<T>(1)));
+}
+
+template <class T>
+Measurement<T> acosh(Measurement<T> input){
+	return log(input + sqrt(input*input - Measurement<T>(1)));
+}
+
+template <class T>
+Measurement<T> atanh(Measurement<T> input){
+	Measurement<T> one = Measurement<T>(1);
+	return Measurement<T>(0.5) * log((one+input)/(one-input));
+}
+
 //===============================================================================
 //print overload
 
