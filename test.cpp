@@ -12,4 +12,12 @@ int main(){
 	cout << atan(d) * asin(d) * acos(d) << endl;
 	cout << pow(a,b) / log(c) * sqrt(a) << endl;
 	cout << atan2(d,e) << endl;
+
+	cout << sinh(a) << endl;
+	cout << cosh(b) << endl;
+	cout << tanh(b) << endl;
+
+	cout << asinh(a) << endl;
+	cout << acosh(a) << endl;
+	cout << atanh(d) << endl;
 }
