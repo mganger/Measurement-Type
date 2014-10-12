@@ -208,6 +208,7 @@ Measurement<T> atanh(Measurement<T> input){
 template <class T>
 std::ostream& operator<<(std::ostream& os, Measurement<T> ms){
 	os << ms.getNumber() << " ± " << ms.getUncert();
+	return os;
 }
 
 #endif
