@@ -14,7 +14,7 @@ class Measurement {
 		//constructors
 		Measurement(T inputNumber, T inputUncert){
 			number = inputNumber;
-			uncert = abs(inputUncert);
+			uncert = std::abs(inputUncert);
 			relative = uncert/number;
 		}
 		Measurement(T inputNumber){
@@ -84,7 +84,7 @@ Measurement<T> pow(Measurement<T> input, Measurement<T> power){
 
 	T outN = pow(x, y);
 
-	T outU = sqrt( pow((y * pow(x, y - 1)), 2) * dx*dx + pow((pow(x,y)*log(abs(x))),2)*dy*dy);
+	T outU = sqrt( pow((y * pow(x, y - 1)), 2) * dx*dx + pow((pow(x,y)*log(std::abs(x))),2)*dy*dy);
 	Measurement<T> output(outN, outU);
 	return output;
 }
@@ -170,7 +170,7 @@ Measurement<T> sqrt(Measurement<T> input){
 //print overload
 
 template <class T>
-ostream& operator<<(ostream& os, Measurement<T> ms){
+std::ostream& operator<<(std::ostream& os, Measurement<T> ms){
 	os << ms.getNumber() << " ± " << ms.getUncert();
 }
 
