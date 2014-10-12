@@ -113,6 +113,11 @@ Measurement<T> log(Measurement<T> input){
 }
 
 template <class T>
+Measurement<T> log10(Measurement<T> input){
+	return log(input) / Measurement<T>(log(T(10)));
+}
+
+template <class T>
 Measurement<T> tan(Measurement<T> input){
 	T inN = input.getNumber();
 	T cosN = cos(inN);
