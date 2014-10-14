@@ -27,7 +27,7 @@ int main(){
 	a += b;
 	c -= d;
 	e *= f;
-	a /= c;
+	d /= e;
 
-	cout << a << endl << c << endl << e << endl;
+	cout << a << endl << c << endl << e << endl << d << endl;
 }
