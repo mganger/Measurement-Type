@@ -70,6 +70,29 @@ class Measurement {
 			Measurement<T> output(outN, outU);
 			return output;
 		}
+
+
+
+
+		//addition, subtraction for +=
+		Measurement<T>& operator+=(Measurement<T> input){
+			*this = *this + input;
+			return *this;
+		}
+		Measurement<T>& operator-=(Measurement<T> input){
+			*this = *this - input;
+			return *this;
+		}
+
+		//multiplication, division
+		Measurement<T>& operator*=(Measurement<T> input){
+			*this = *this * input;
+			return *this;
+		}
+		Measurement<T>& operator/=(Measurement<T> input){
+			*this = *this / input;
+			return *this;
+		}
 };
 
 //=======================================================================================

@@ -23,4 +23,11 @@ int main(){
 
 	cout << log(c) << endl;
 	cout << log10(c) << endl;
+
+	a += b;
+	c -= d;
+	e *= f;
+	a /= c;
+
+	cout << a << endl << c << endl << e << endl;
 }
