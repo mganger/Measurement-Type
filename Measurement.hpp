@@ -19,7 +19,7 @@ class Measurement {
 		}
 		Measurement(T inputNumber, T inputUncert){
 			number = inputNumber;
-			uncert = std::abs(inputUncert);
+			uncert = inputUncert;
 			relative = uncert/number;
 		}
 		template <class I>
@@ -133,7 +133,7 @@ template <class T> Measurement<T> pow(Measurement<T> input, Measurement<T> power
 
 	T outN = pow(x, y);
 
-	T outU = sqrt( pow((y * pow(x, y - 1)), 2) * dx*dx + pow((pow(x,y)*log(std::abs(x))),2)*dy*dy);
+	T outU = sqrt( pow((y * pow(x, y - 1)), 2) * dx*dx + pow(outN*log(x*x)/2,2)*dy*dy);
 	Measurement<T> output(outN, outU);
 	return output;
 }
