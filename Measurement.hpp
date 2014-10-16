@@ -133,6 +133,10 @@ template <class T> Measurement<T> pow(Measurement<T> input, Measurement<T> power
 	return output;
 }
 
+template <class T, class I> Measurement<T> pow(Measurement<T> input, I power){
+	return pow(input, Measurement<T>(power));
+}
+
 template <class T> Measurement<T> sin(Measurement<T> input){
 	T inN = input.getNumber();
 	T outU = cos(inN) * input.getUncert();
