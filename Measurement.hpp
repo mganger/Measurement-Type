@@ -115,6 +115,11 @@ class Measurement {
 		template <class I> Measurement<T> operator-(I input){ return Measurement<T>(number - input, uncert);}
 		template <class I> Measurement<T> operator*(I input){ return Measurement<T>(number * input, uncert * input);}
 		template <class I> Measurement<T> operator/(I input){ return Measurement<T>(number / input, uncert / input);}
+
+		bool operator<(Measurement<T> input){return number < input.getNumber();}
+		bool operator>(Measurement<T> input){return number > input.getNumber();}
+		bool operator==(Measurement<T> input){return number == input.getNumber();}
+		bool operator!=(Measurement<T> input){return number != input.getNumber();}
 };
 
 //=======================================================================================
