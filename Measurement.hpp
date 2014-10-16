@@ -12,6 +12,11 @@ class Measurement {
 		T number, uncert, relative;
 	public:
 		//constructors
+		Measurement(){
+			number = 0;
+			uncert = 0;
+			relative = 0;
+		}
 		Measurement(T inputNumber, T inputUncert){
 			number = inputNumber;
 			uncert = std::abs(inputUncert);
