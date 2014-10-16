@@ -22,7 +22,8 @@ class Measurement {
 			uncert = std::abs(inputUncert);
 			relative = uncert/number;
 		}
-		Measurement(T inputNumber){
+		template <class I>
+		Measurement(I inputNumber){
 			number = inputNumber;
 			uncert = 0;
 			relative = 0;
