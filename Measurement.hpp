@@ -35,6 +35,12 @@ class Measurement {
 			relative = 0;
 			return *this;
 		}
+		Measurement<T> operator=(Measurement<T> input){
+			number =   input.getNumber();
+			uncert =   input.getUncert();
+			relative = input.getRelUnc();
+			return *this;
+		}
 
 		//addition, subtraction
 		Measurement<T> operator+(Measurement<T> input){
