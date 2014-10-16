@@ -103,6 +103,12 @@ class Measurement {
 			*this = *this / input;
 			return *this;
 		}
+
+		//any type operators
+		template <class I> Measurement<T> operator+(I input){ return Measurement<T>(number + input, uncert);}
+		template <class I> Measurement<T> operator-(I input){ return Measurement<T>(number - input, uncert);}
+		template <class I> Measurement<T> operator*(I input){ return Measurement<T>(number * input, uncert * input);}
+		template <class I> Measurement<T> operator/(I input){ return Measurement<T>(number / input, uncert / input);}
 };
 
 //=======================================================================================
