@@ -80,23 +80,26 @@ class Measurement {
 
 
 
-
 		//addition, subtraction for +=
-		Measurement<T>& operator+=(Measurement<T> input){
+		template <class I>
+		Measurement<T>& operator+=(I input){
 			*this = *this + input;
 			return *this;
 		}
-		Measurement<T>& operator-=(Measurement<T> input){
+		template <class I>
+		Measurement<T>& operator-=(I input){
 			*this = *this - input;
 			return *this;
 		}
 
 		//multiplication, division
-		Measurement<T>& operator*=(Measurement<T> input){
+		template <class I>
+		Measurement<T>& operator*=(I input){
 			*this = *this * input;
 			return *this;
 		}
-		Measurement<T>& operator/=(Measurement<T> input){
+		template <class I>
+		Measurement<T>& operator/=(I input){
 			*this = *this / input;
 			return *this;
 		}
