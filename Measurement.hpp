@@ -28,7 +28,8 @@ class Measurement {
 		T getRelUnc(){return relative;}
 
 		//promotion
-		Measurement<T> operator=(T rhs){
+		template <class I>
+		Measurement<T> operator=(I rhs){
 			number = rhs;
 			uncert = 0;
 			relative = 0;
