@@ -2,7 +2,7 @@
 
 all: build
 
-try: test
+try: test Measurement.hpp
 	./test
 
 build: test.cpp Measurement.hpp
