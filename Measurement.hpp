@@ -11,6 +11,7 @@ class Measurement {
 	private:
 		T number, uncert, relative;
 	public:
+		static const char * printChar;
 		//constructors
 		Measurement(){
 			number = 0;
@@ -136,6 +137,8 @@ class Measurement {
 		bool operator==(Measurement<T> input){return number == input.getNumber();}
 		bool operator!=(Measurement<T> input){return number != input.getNumber();}
 };
+template<class T>
+const char * Measurement<T>::printChar = "±";
 
 //=======================================================================================
 //function overloads
@@ -258,7 +261,7 @@ template <class T> Measurement<T> atanh(Measurement<T> input){
 
 template <class T>
 std::ostream& operator<<(std::ostream& os, Measurement<T> ms){
-	os << ms.getNumber() << " ± " << ms.getUncert();
+	os << ms.getNumber() << " " << Measurement<T>::printChar << " " << ms.getUncert();
 	return os;
 }
 
