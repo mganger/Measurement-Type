@@ -26,7 +26,7 @@ class Measurement {
 
 		//use this constructor to merge two Measurements, where the first is a mean
 		//and second an uncertainty
-		Measurement(Measurement<T>& input1, Measurement<T>& input2){
+		Measurement(Measurement<T> input1, Measurement<T> input2){
 			T x,y,z,a;
 			x = input1.getNumber();
 			y = input1.getUncert();
