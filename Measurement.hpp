@@ -26,7 +26,7 @@ class Measurement {
 
 		//use this constructor to merge two Measurements, where the first is a mean
 		//and second an uncertainty
-		Measurement(Measurement<T> input1, Measurement<T> input2){
+		Measurement<T>& merge(Measurement<T> input1, Measurement<T> input2){
 			T x,y,z,a;
 			x = input1.getNumber();
 			y = input1.getUncert();
@@ -36,6 +36,7 @@ class Measurement {
 			number = x;
 			uncert = sqrt(y*y + z*z + a*a);
 			relative = uncert/number;
+			return *this;
 		}
 		Measurement(T inputNumber, T inputUncert){
 			number = inputNumber;

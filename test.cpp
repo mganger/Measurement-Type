@@ -75,5 +75,5 @@ int main(){
 	cout << endl << "Merging:" << endl;
 	cout <<         "-------" << endl;
 	cout << a << " and " << b << endl;
-	cout << Measurement<double>(a,b) << endl;
+	cout << Measurement<double>().merge(a,b) << endl;
 }
