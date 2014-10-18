@@ -17,16 +17,30 @@ class Measurement {
 			uncert = 0;
 			relative = 0;
 		}
-		Measurement(T inputNumber, T inputUncert){
-			number = inputNumber;
-			uncert = inputUncert;
-			relative = uncert/number;
-		}
 		template <class I>
 		Measurement(I inputNumber){
 			number = inputNumber;
 			uncert = 0;
 			relative = 0;
+		}
+
+		//use this constructor to merge two Measurements, where the first is a mean
+		//and second an uncertainty
+		Measurement(Measurement<T>& input1, Measurement<T>& input2){
+			T x,y,z,a;
+			x = input1.getNumber();
+			y = input1.getUncert();
+			z = input2.getNumber();
+			a = input2.getUncert();
+
+			number = x;
+			uncert = sqrt(y*y + z*z + a*a);
+			relative = uncert/number;
+		}
+		Measurement(T inputNumber, T inputUncert){
+			number = inputNumber;
+			uncert = inputUncert;
+			relative = uncert/number;
 		}
 
 		T getNumber(){return number;}
