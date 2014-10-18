@@ -1,11 +1,11 @@
 #simple makefile
 
-all: build
+all: test
 
-try: test Measurement.hpp
+try: all
 	./test
 
-build: test.cpp Measurement.hpp
+test: test.cpp Measurement.hpp
 	g++ -Wall -Werror test.cpp -O3 -o test
 
 test.cpp: Measurement.hpp
