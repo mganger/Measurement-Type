@@ -70,4 +70,10 @@ int main(){
 	cout << b << "              - 10 = " << (b - 10) << endl;
 	cout << c << "     / 10 = " << (c / 10) << endl;
 	cout << d << " * 10 = " << (d * 10) << endl;
+
+
+	cout << endl << "Merging:" << endl;
+	cout <<         "-------" << endl;
+	cout << a << " and " << b << endl;
+	cout << Measurement<double>(a,b) << endl;
 }
